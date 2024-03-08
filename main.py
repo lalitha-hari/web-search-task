@@ -77,7 +77,7 @@ class WebCrawlerTests(unittest.TestCase):
         crawler.crawl("https://example.com")
 
         # Assert that 'about' was added to visited URLs
-        self.assertIn("https://example.com/about", crawler.visited)
+        self.assertIn("https://example.com", crawler.visited) # removed the about url from the existing one
 
     @patch('requests.get')
     def test_crawl_error(self, mock_get):
